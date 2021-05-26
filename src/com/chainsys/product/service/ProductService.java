@@ -10,6 +10,8 @@ public interface ProductService {
 
 	Product findById(int id) throws ProductNotFoundException;
 
+	void updateExpire(Product Product) throws ProductNotFoundException;
+	
 	void save(Product Product);
 
 	void update(Product Product) throws ProductNotFoundException;

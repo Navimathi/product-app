@@ -65,7 +65,18 @@ public class ProductServiceImpl implements ProductService {
 			return Product;
 		}
 	}
+	
+	@Override
+	public void updateExpire(Product Product) throws ProductNotFoundException {
+		Product result = dao.findById(Product.getId());
+		if (result == null) {
+			throw new ProductNotFoundException("Product Id Not Found");
+		} else {
+			dao.updateExpire(Product);
+		}
 
+	}
+	
 	
 
 }
