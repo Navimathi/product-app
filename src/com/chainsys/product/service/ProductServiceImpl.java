@@ -1,5 +1,6 @@
 package com.chainsys.product.service;
 
+import java.util.List;
 import java.util.Set;
 
 import com.chainsys.product.dao.ProductDAO;
@@ -83,6 +84,10 @@ public class ProductServiceImpl implements ProductService {
 		} else {
 			dao.deletebyname(name);
 		}
+	}
+	@Override
+	public List<String> ViewAllProductName(){
+		return dao.ViewAllProductName();
 	}
 	
 	

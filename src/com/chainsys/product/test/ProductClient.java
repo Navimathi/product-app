@@ -2,6 +2,7 @@ package com.chainsys.product.test;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -19,6 +20,7 @@ public class ProductClient {
 		DateTimeFormatter dateFormat;
 		int id;
 		String name;
+		List<String> namelist;
 		System.out.println("Enter the choice");
 		Scanner scanner = new Scanner(System.in);
 		int choice = scanner.nextInt();
@@ -53,9 +55,9 @@ public class ProductClient {
 			break;
 		case 4:
 			System.out.println("Adding a Product");
-			date = "01/01/2022";
+			date = "05/30/2021";
 			dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-			Product newProduct = new Product(4, "Pencil", LocalDate.parse(date, dateFormat));
+			Product newProduct = new Product(3, "Milk", LocalDate.parse(date, dateFormat));
 			service.save(newProduct);
 			productSet = service.findAll();
 			System.out.println(productSet);
@@ -102,6 +104,12 @@ public class ProductClient {
 				System.out.println(productSet);
 			} catch (ProductNotFoundException e) {
 			}
+		case 9:
+			System.out.println("View All Product Name");
+			namelist=service.ViewAllProductName();
+			System.out.println(namelist);
+			break;
+			
 			default:
 			break;
 		}

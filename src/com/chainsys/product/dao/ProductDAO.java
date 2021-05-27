@@ -1,5 +1,6 @@
 package com.chainsys.product.dao;
 
+import java.util.List;
 import java.util.Set;
 
 import com.chainsys.product.model.Product;
@@ -13,6 +14,8 @@ public interface ProductDAO {
 
 	void update(Product product);
 
+	public List<String> ViewAllProductName();
+	
 	void deletebyname(String name);
 	
 	void delete(int id);
