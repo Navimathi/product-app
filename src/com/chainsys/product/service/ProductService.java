@@ -24,4 +24,8 @@ public interface ProductService {
 	void deletebyname(String name) throws ProductNotFoundException;
 	
 	Product findbyname(String name) throws ProductNotFoundException;
+	
+	Product findByDate(String date) throws ProductNotFoundException;
+	
+	void deleteByExpiryDate(String date) throws ProductNotFoundException;
 }

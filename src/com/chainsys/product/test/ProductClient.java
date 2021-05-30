@@ -109,7 +109,26 @@ public class ProductClient {
 			namelist=service.ViewAllProductName();
 			System.out.println(namelist);
 			break;
-			
+		case 10:
+			System.out.println("Find the Product by Expiry Date");
+			System.out.println("Enter the Expiry Date");
+			date = scanner.next();
+			try {
+				Product productED = service.findByDate(date);
+				System.out.println(productED);
+			}catch(ProductNotFoundException e){
+			}
+		case 11:
+			System.out.println("Deleting the Product by Expiry Date");
+			System.out.println("Enter the Product Expiry Date");
+			date = scanner.next();
+			dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+			try{
+				service.deleteByExpiryDate(date);
+				Product productED = service.findByDate(date);
+				System.out.println(productED);
+			}catch(ProductNotFoundException e) {
+			}
 			default:
 			break;
 		}

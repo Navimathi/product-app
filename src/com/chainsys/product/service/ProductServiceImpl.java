@@ -90,6 +90,28 @@ public class ProductServiceImpl implements ProductService {
 		return dao.ViewAllProductName();
 	}
 	
+	@Override
+	public Product findByDate (String date) throws ProductNotFoundException {
+		Product productED = dao.findByDate(date);
+		if(productED == null) {
+			throw new ProductNotFoundException("Product doesn't exist");
+		}
+		else {
+			return productED;
+		}
+	}
+	
+	@Override
+	public void deleteByExpiryDate (String date) throws ProductNotFoundException {
+		Product productED = dao.findByDate(date);
+		if(productED == null) {
+			throw new ProductNotFoundException("Product doesn't exist");
+		}
+		else {
+			dao.deleteByExpiryDate(date);
+		}
+	}
+	
 	
 
 }

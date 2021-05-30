@@ -23,4 +23,8 @@ public interface ProductDAO {
 	Product findbyname(String name);
 	
 	void updateExpire(Product product);
+	
+	Product findByDate (String date);
+	
+	void deleteByExpiryDate (String date);
 }
