@@ -20,6 +20,7 @@ public class ProductDAOImpl implements ProductDAO {
 	private static ResultSet rs;
 	private static Set<Product> productSet;
 	private static List<String> namelist;
+	private static List<Integer> idlist;
 
 	public ProductDAOImpl() {
 		try {
@@ -181,5 +182,19 @@ public class ProductDAOImpl implements ProductDAO {
 		}catch (SQLException e){
 			e.printStackTrace();
 		}
+	}
+	
+	public List<Integer> viewAllProductId(){
+		try {
+			pstmt=con.prepareStatement("select P_id from product_2607");
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				idlist.add(rs.getInt("P_id"));
+			}
+		}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		return idlist;
+
 	}
 }

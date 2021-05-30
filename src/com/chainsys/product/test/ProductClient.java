@@ -21,6 +21,7 @@ public class ProductClient {
 		int id;
 		String name;
 		List<String> namelist;
+		List<Integer> idlist;
 		System.out.println("Enter the choice");
 		Scanner scanner = new Scanner(System.in);
 		int choice = scanner.nextInt();
@@ -129,6 +130,13 @@ public class ProductClient {
 				System.out.println(productED);
 			}catch(ProductNotFoundException e) {
 			}
+			break;
+		case 12:
+			System.out.println("View all product IDs");
+			idlist = service.viewAllProductId();
+			System.out.println(idlist);
+			break;
+			
 			default:
 			break;
 		}

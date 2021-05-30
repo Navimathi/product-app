@@ -112,6 +112,9 @@ public class ProductServiceImpl implements ProductService {
 		}
 	}
 	
-	
+	@Override
+	public List<Integer> viewAllProductId() {
+		return dao.viewAllProductId();
+	}
 
 }

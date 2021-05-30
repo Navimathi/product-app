@@ -11,6 +11,8 @@ public interface ProductService {
 
 	public List<String> ViewAllProductName();
 	
+	public List<Integer> viewAllProductId();
+	
 	Product findById(int id) throws ProductNotFoundException;
 
 	void updateExpire(Product Product) throws ProductNotFoundException;
@@ -28,4 +30,5 @@ public interface ProductService {
 	Product findByDate(String date) throws ProductNotFoundException;
 	
 	void deleteByExpiryDate(String date) throws ProductNotFoundException;
+
 }

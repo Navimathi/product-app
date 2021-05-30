@@ -16,6 +16,8 @@ public interface ProductDAO {
 
 	public List<String> ViewAllProductName();
 	
+	public List<Integer> viewAllProductId();
+	
 	void deletebyname(String name);
 	
 	void delete(int id);
